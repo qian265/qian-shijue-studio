@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft Yahei", sans-serif;
+}
+body {
+    color: #ffffff;
+    background-color: #0f2220;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+/* 背景遮罩，压暗背景，文字更好读 */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(12, 28, 26, 0.75);
+    z-index: 0;
+}
+.container {
+    position: relative;
+    z-index: 1;
+}
+/* 导航栏 */
+nav {
+    width: 100%;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    background-color: rgba(15, 34, 32, 0.55);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(212, 180, 100, 0.25);
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    color: #d4b464;
+    text-shadow: 0 0 8px #d4b46477;
+}
+/* 主体内容区 */
+main {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+/* 圆形头像，缩小尺寸 */
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #d4b464;
+    box-shadow: 0 0 20px #d4b46444;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 24px;
+}
+.name {
+    font-size: 48px;
+    letter-spacing: 8px;
+    color: #fff;
+    margin-bottom: 32px;
+    text-shadow: 0 0 12px #70c9aa44;
+}
+.intro-card {
+    max-width: 780px;
+    background-color: rgba(18, 38, 36, 0.62);
+    border: 1px solid rgba(212, 180, 100, 0.22);
+    border-radius: 14px;
+    padding: 36px;
+    line-height: 1.85;
+    font-size: 16px;
+}
+.intro-card p {
+    margin-bottom: 18px;
+}
+.highlight {
+    color: #d4b464;
+}
+#about, #contact {
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.section-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #d4b464;
+    letter-spacing: 3px;
+}
+.contact-box {
+    max-width: 780px;
+    background-color: rgba(18, 38, 36, 0.62);
+    border: 1px solid rgba(212, 180, 100, 0.22);
+    border-radius: 14px;
+    padding: 36px;
+    width: 100%;
+    text-align: center;
+}
+/* 作品卡片 */
+.work-card{
+    max-width:780px;
+    width:100%;
+    background-color: rgba(18, 38, 36, 0.62);
+    border: 1px solid rgba(212, 180, 100, 0.22);
+    border-radius:14px;
+    padding:36px;
+    margin-top:70px;
+    text-align:center;
+}
+.work-img-box {
+    display: inline-block;
+    background: #ffffff;
+    padding:12px;
+    border-radius:12px;
+    border: 1px solid rgba(212,180,100,0.25);
+}
+.work-img{
+    width:100%;
+    max-width:420px;
+    border-radius:10px;
+    object-fit: contain;
+}
+.tap-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 26px;
+    background:#d4b464;
+    color:#0f2220;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.tap-btn:hover{
+    background:#f0cc77;
+    box-shadow:0 0 12px #d4b46488;
+}
+/* 移动端适配 */
+@media(max-width:640px){
+    nav {
+        gap: 28px;
+        padding: 18px 10px;
+    }
+    .name {
+        font-size: 34px;
+    }
+    .avatar {
+        width:120px;
+        height:120px;
+    }
+    .intro-card, .contact-box,.work-card {
+        padding:22px;
+    }
+}
